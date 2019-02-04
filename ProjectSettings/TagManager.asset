@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Anvil
   - Hammer
+  - Ingot
   layers:
   - Default
   - TransparentFX
