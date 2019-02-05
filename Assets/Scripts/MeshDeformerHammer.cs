@@ -9,7 +9,7 @@ public class MeshDeformerHammer : MonoBehaviour
 
     private void Update()
     {
-        force = this.GetComponentInParent<ReadoutPhysics>().currentForce;
+        force = this.GetComponentInParent<ReadoutPhysics>().currentForce * 0.01f;
     }
 
     private void OnTriggerEnter(Collider other)
