@@ -435,7 +435,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &682738037
 RectTransform:
   m_ObjectHideFlags: 0
@@ -608,25 +608,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400006, guid: ce816f2e6abb0504092c23ed9b970dfd,
     type: 2}
   m_PrefabInternal: {fileID: 1198160844}
---- !u!1 &876008524 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 100002, guid: ffce4385f9f3448448c971dfff7d501b,
-    type: 3}
-  m_PrefabInternal: {fileID: 1839000962}
---- !u!64 &876008528
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 876008524}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300000, guid: ffce4385f9f3448448c971dfff7d501b, type: 3}
 --- !u!1 &946785503
 GameObject:
   m_ObjectHideFlags: 0
@@ -748,6 +729,7 @@ MonoBehaviour:
   force: 10
   forceOffset: 0.1
   distanceFromIngot: 0
+  deformDistance: 0.01
 --- !u!136 &1051740860
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1230,9 +1212,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d74390f1aeec4114e9611c97edeb40ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xSize: 100
-  ySize: 100
-  zSize: 100
+  xSize: 20
+  ySize: 20
+  zSize: 20
   roundness: 0
 --- !u!4 &1283499768
 Transform:
@@ -1242,7 +1224,7 @@ Transform:
   m_GameObject: {fileID: 1283499763}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.093, y: 0.9197, z: -0.172}
-  m_LocalScale: {x: 0.0018829001, y: 0.001, z: 0.0043422}
+  m_LocalScale: {x: 0.01, y: 0.01, z: 0.02}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7

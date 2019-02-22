@@ -68,7 +68,6 @@ public class MeshDeformer : MonoBehaviour
 
     public void AddDeformingForce (Vector3 point, float force)
     {
-        //Debug.DrawLine(Camera.main.transform.position, point);
         point = transform.InverseTransformPoint(point);
         for (int i = 0; i < displacedVertices.Length; i++)
         {
@@ -80,7 +79,7 @@ public class MeshDeformer : MonoBehaviour
     {
         Vector3 pointToVertex = displacedVertices[i] - point;
         pointToVertex *= uniformScale;
-        float attenuatedForce = force / (1f + pointToVertex.sqrMagnitude);
+        float attenuatedForce = force / (1f + (pointToVertex.sqrMagnitude * 10)); //strength curve from point of contact
         float velocity = attenuatedForce * Time.deltaTime;
         vertexVelocities[i] += pointToVertex.normalized * velocity;
     }
