@@ -223,20 +223,20 @@ public class RoundedCube : MonoBehaviour {
 		Vector3 half = new Vector3(xSize, ySize, zSize) * 0.5f; 
 		Vector3 max = new Vector3(xSize, ySize, zSize) - min;
 
-		//AddCapsuleCollider(0, half.x, min.y, min.z);
-		//AddCapsuleCollider(0, half.x, min.y, max.z);
-		//AddCapsuleCollider(0, half.x, max.y, min.z);
-		//AddCapsuleCollider(0, half.x, max.y, max.z);
-		//
-		//AddCapsuleCollider(1, min.x, half.y, min.z);
-		//AddCapsuleCollider(1, min.x, half.y, max.z);
-		//AddCapsuleCollider(1, max.x, half.y, min.z);
-		//AddCapsuleCollider(1, max.x, half.y, max.z);
-		//
-		//AddCapsuleCollider(2, min.x, min.y, half.z);
-		//AddCapsuleCollider(2, min.x, max.y, half.z);
-		//AddCapsuleCollider(2, max.x, min.y, half.z);
-		//AddCapsuleCollider(2, max.x, max.y, half.z);
+		AddCapsuleCollider(0, half.x, min.y, min.z);
+		AddCapsuleCollider(0, half.x, min.y, max.z);
+		AddCapsuleCollider(0, half.x, max.y, min.z);
+		AddCapsuleCollider(0, half.x, max.y, max.z);
+		
+		AddCapsuleCollider(1, min.x, half.y, min.z);
+		AddCapsuleCollider(1, min.x, half.y, max.z);
+		AddCapsuleCollider(1, max.x, half.y, min.z);
+		AddCapsuleCollider(1, max.x, half.y, max.z);
+		
+		AddCapsuleCollider(2, min.x, min.y, half.z);
+		AddCapsuleCollider(2, min.x, max.y, half.z);
+		AddCapsuleCollider(2, max.x, min.y, half.z);
+		AddCapsuleCollider(2, max.x, max.y, half.z);
 	}
 
 	private void AddBoxCollider (float x, float y, float z)
@@ -245,14 +245,14 @@ public class RoundedCube : MonoBehaviour {
 		c.size = new Vector3(x, y, z);
 	}
 
-	//private void AddCapsuleCollider (int direction, float x, float y, float z)
-    //{
-	//	CapsuleCollider c = gameObject.AddComponent<CapsuleCollider>();
-	//	c.center = new Vector3(x, y, z);
-	//	c.direction = direction;
-	//	c.radius = roundness;
-	//	c.height = c.center[direction] * 2f;
-	//}
+	private void AddCapsuleCollider (int direction, float x, float y, float z)
+    {
+		CapsuleCollider c = gameObject.AddComponent<CapsuleCollider>();
+		c.center = new Vector3(x, y, z);
+		c.direction = direction;
+		c.radius = roundness;
+		c.height = c.center[direction] * 2f;
+	}
 
 //	private void OnDrawGizmos () {
 //		if (vertices == null) {

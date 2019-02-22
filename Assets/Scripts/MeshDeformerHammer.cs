@@ -8,30 +8,21 @@ public class MeshDeformerHammer : MonoBehaviour
     private GameObject hitObject;
     public float forceOffset = 0.1f;
     public float distanceFromIngot;
+    public float deformDistance = 0.1f;
 
     private void Update()
     {
-        force = this.GetComponentInParent<ReadoutPhysics>().currentForce * 0.01f;
-    }
-
-    void FixedUpdate()
-    {
+        force = this.GetComponentInParent<ReadoutPhysics>().currentForce;
         RaycastHit hit;
         Vector3 fwd = transform.TransformDirection(Vector3.forward);
 
         if (Physics.Raycast(transform.position, fwd, out hit))
         {
-            distanceFromIngot = Vector3.Distance(hit.transform.position, transform.position);
-            Debug.Log(distanceFromIngot);
-            if (distanceFromIngot < 0.36f )
+
+            if (hit.distance < deformDistance)
             {
-                if (hit.transform.gameObject.tag == "Ingot")
-                {
-                    HandleInput(hit.transform.gameObject, hit);
-                    Debug.Log("Should Deform");
-                }
+                HandleInput(hit.transform.gameObject, hit);
             }
-            Debug.Log("There is something in front of the object!");
         }
         Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward), Color.yellow);
     }
@@ -39,8 +30,14 @@ public class MeshDeformerHammer : MonoBehaviour
     void HandleInput(GameObject hitObject, RaycastHit hit)
     {
         MeshDeformer deformer = hitObject.GetComponent<MeshDeformer>();
-        Vector3 point = hit.point;
-        point += hit.normal * forceOffset;
-        deformer.AddDeformingForce(point, force);
+
+        if (deformer)
+        {
+            Debug.Log("Distance from hit: " + hit.distance);
+            Debug.Log("Location of hit: " + hit.transform.position);
+            Vector3 point = hit.point;
+            point += hit.normal * forceOffset;
+            deformer.AddDeformingForce(point, force);
+        }
     }
 }
