@@ -9,7 +9,7 @@ public class AnvilHitDetection : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        measuredSpeed = other.GetComponent<ReadoutPhysics>().currentSpeed;
-        measuredForce = other.GetComponent<ReadoutPhysics>().currentForce;
+        //measuredSpeed = other.GetComponent<ReadoutPhysics>().currentSpeed;
+        //measuredForce = other.GetComponent<ReadoutPhysics>().currentForce;
     }
 }

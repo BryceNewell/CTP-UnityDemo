@@ -608,6 +608,25 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400006, guid: ce816f2e6abb0504092c23ed9b970dfd,
     type: 2}
   m_PrefabInternal: {fileID: 1198160844}
+--- !u!1 &876008524 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100002, guid: ffce4385f9f3448448c971dfff7d501b,
+    type: 3}
+  m_PrefabInternal: {fileID: 1839000962}
+--- !u!64 &876008528
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 876008524}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300000, guid: ffce4385f9f3448448c971dfff7d501b, type: 3}
 --- !u!1 &946785503
 GameObject:
   m_ObjectHideFlags: 0
@@ -728,6 +747,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   force: 10
   forceOffset: 0.1
+  distanceFromIngot: 0
 --- !u!136 &1051740860
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1511,6 +1531,10 @@ Prefab:
     - target: {fileID: 400000, guid: ffce4385f9f3448448c971dfff7d501b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: ffce4385f9f3448448c971dfff7d501b, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ffce4385f9f3448448c971dfff7d501b, type: 3}
