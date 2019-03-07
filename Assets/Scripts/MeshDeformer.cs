@@ -34,7 +34,7 @@ public class MeshDeformer : MonoBehaviour
 
     private void Update()
     {
-        uniformScale = transform.localScale.x;
+        uniformScale = transform.localScale.x; // <---------- maybe his is what i need to change to get a smaller deformation radius
 
         for (int i=0; i < displacedVertices.Length; i++)
         {
@@ -80,7 +80,7 @@ public class MeshDeformer : MonoBehaviour
         Vector3 pointToVertex = displacedVertices[i] - point;
         pointToVertex *= uniformScale;
         //strength curve from point of contact (look up curve with a graph calc)
-        float attenuatedForce = ((force *10) / (1f + (pointToVertex.sqrMagnitude * 10000)));
+        float attenuatedForce = ((force *10) / (1f + (pointToVertex.sqrMagnitude )));
         float velocity = attenuatedForce * Time.deltaTime;
         vertexVelocities[i] += pointToVertex.normalized * velocity;
     }
