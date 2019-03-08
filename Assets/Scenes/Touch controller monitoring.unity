@@ -329,6 +329,55 @@ Transform:
   m_Father: {fileID: 1313005562}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &444580672
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 444580674}
+  - component: {fileID: 444580673}
+  m_Layer: 0
+  m_Name: Flex Array Actor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &444580673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 444580672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5af3b29d7db32904889ab3c1dcb99c7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_container: {fileID: 11400000, guid: 470a7573861952145a702fe7107917e6, type: 2}
+  m_particleGroup: -1
+  m_selfCollide: 1
+  m_selfCollideFilter: 0
+  m_fluid: 0
+  m_massScale: 1
+  m_drawParticles: 1
+  m_recreateActor: 0
+  m_asset: {fileID: 11400000, guid: ab1509697147a1a4699ab87af8c48144, type: 2}
+--- !u!4 &444580674
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 444580672}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.472, y: 1.152, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &500690372 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 462066, guid: ce816f2e6abb0504092c23ed9b970dfd,
@@ -987,7 +1036,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100008, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 2}
@@ -1063,6 +1112,20 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1842597728232470, guid: ee26d8243db0f4f4683339fca2c73879,
     type: 2}
   m_PrefabInternal: {fileID: 768234372}
+--- !u!64 &1283499769
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1283499763}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 0}
 --- !u!1 &1313005561
 GameObject:
   m_ObjectHideFlags: 0
@@ -1396,6 +1459,55 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5333bcf2f304cbc40beba2f12802115c, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &1876117350
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1876117352}
+  - component: {fileID: 1876117351}
+  m_Layer: 0
+  m_Name: FlexCloth
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1876117351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1876117350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 669b96cc137041246b46e8203ba6a039, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_container: {fileID: 11400000, guid: f5f100a110809ae42809cdbaa404ab26, type: 2}
+  m_particleGroup: -1
+  m_selfCollide: 1
+  m_selfCollideFilter: 0
+  m_fluid: 0
+  m_massScale: 1
+  m_drawParticles: 1
+  m_recreateActor: 0
+  m_asset: {fileID: 11400000, guid: 1ebef3adf881d674dba0fb2c44443d3f, type: 2}
+--- !u!4 &1876117352
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1876117350}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.951, y: 1.489, z: -1.236}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1944744819
 GameObject:
   m_ObjectHideFlags: 0

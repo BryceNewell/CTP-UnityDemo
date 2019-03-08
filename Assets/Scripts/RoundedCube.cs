@@ -215,9 +215,9 @@ public class RoundedCube : MonoBehaviour {
 
 	private void CreateColliders ()
     {
-		AddBoxCollider(xSize, ySize - roundness * 2, zSize - roundness * 2);
-		AddBoxCollider(xSize - roundness * 2, ySize, zSize - roundness * 2);
-		AddBoxCollider(xSize - roundness * 2, ySize - roundness * 2, zSize);
+		//AddBoxCollider(xSize, ySize - roundness * 2, zSize - roundness * 2);
+		//AddBoxCollider(xSize - roundness * 2, ySize, zSize - roundness * 2);
+		//AddBoxCollider(xSize - roundness * 2, ySize - roundness * 2, zSize);
         //
 		//Vector3 min = Vector3.one * roundness;
 		//Vector3 half = new Vector3(xSize, ySize, zSize) * 0.5f; 
