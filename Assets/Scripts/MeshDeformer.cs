@@ -5,25 +5,26 @@ using UnityEngine;
 [RequireComponent(typeof(MeshFilter))]
 public class MeshDeformer : MonoBehaviour
 {
-    Mesh deformingMesh;
-    Vector3[] originalVertices, displacedVertices;
-    Vector3[] vertexVelocities;
-
-    public float springForce = 20f;
-    public float damping = 5f;
-    private float uniformScale = 1f;
-
     public enum ElasticProperties { Yes, No };
     public ElasticProperties elastic;
+    public float springForce = 20f;
+    public float damping = 5f;
+    public float forceMultiplier = 100;
 
-    public Camera camera;
+    private Mesh deformingMesh;
+    private Vector3[] originalVertices;
+    private Vector3[] displacedVertices;
+    private Vector3[] vertexVelocities;
+    private float uniformScale = 1f;
+    private MeshCollider collider;
+    private bool updateMeshCollider;
 
     void Start()
     {
-        camera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         deformingMesh = GetComponent<MeshFilter>().mesh;
         originalVertices = deformingMesh.vertices;
         displacedVertices = new Vector3[originalVertices.Length];
+        collider = GetComponent<MeshCollider>();
 
         for (int i = 0; i < originalVertices.Length; i++)
         {
@@ -34,7 +35,10 @@ public class MeshDeformer : MonoBehaviour
 
     private void Update()
     {
-        uniformScale = transform.localScale.x; // <---------- maybe his is what i need to change to get a smaller deformation radius
+        if(!collider.sharedMesh)
+        {
+            collider.sharedMesh = deformingMesh;
+        }
 
         for (int i=0; i < displacedVertices.Length; i++)
         {
@@ -42,6 +46,12 @@ public class MeshDeformer : MonoBehaviour
         }
         deformingMesh.vertices = displacedVertices;
         deformingMesh.RecalculateNormals();
+        if(updateMeshCollider)
+        {
+            deformingMesh = GetComponent<MeshFilter>().mesh;
+            collider.sharedMesh = deformingMesh;
+            updateMeshCollider = false;
+        }
     }
 
     void UpdateVertex(int i)
@@ -56,14 +66,10 @@ public class MeshDeformer : MonoBehaviour
                 velocity -= displacement * springForce * Time.deltaTime;
                 break;
             }
-            case ElasticProperties.No:
-            {
-                break;
-            }
         }
         velocity *= 1f - damping * Time.deltaTime;
         vertexVelocities[i] = velocity;
-        displacedVertices[i] += velocity * (Time.deltaTime / uniformScale);
+        displacedVertices[i] += velocity * Time.deltaTime;
     }
 
     public void AddDeformingForce (Vector3 point, float force)
@@ -73,14 +79,14 @@ public class MeshDeformer : MonoBehaviour
         {
             AddForceToVertex(i, point, force);
         }
+        updateMeshCollider = true;
     }
 
     void AddForceToVertex(int i, Vector3 point, float force)
     {
         Vector3 pointToVertex = displacedVertices[i] - point;
-        pointToVertex *= uniformScale;
         //strength curve from point of contact (look up curve with a graph calc)
-        float attenuatedForce = ((force *10) / (1f + (pointToVertex.sqrMagnitude )));
+        float attenuatedForce = ((force * forceMultiplier) / (1f + (pointToVertex.sqrMagnitude *10)));
         float velocity = attenuatedForce * Time.deltaTime;
         vertexVelocities[i] += pointToVertex.normalized * velocity;
     }

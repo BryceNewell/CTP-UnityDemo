@@ -8,7 +8,7 @@ public class MeshDeformerHammer : MonoBehaviour
     private GameObject hitObject;
     public float forceOffset = 0.1f;
     public float distanceFromIngot;
-    public float deformDistance = 0.1f;
+    public float deformDistance = 0.3f;
 
     private void Update()
     {
@@ -37,7 +37,7 @@ public class MeshDeformerHammer : MonoBehaviour
             Debug.Log("Location of hit: " + hit.transform.position);
             Vector3 point = hit.point;
             point += hit.normal * forceOffset;
-            deformer.AddDeformingForce(point, force);
+            deformer.AddDeformingForce(point, 1000/*force*/);
         }
     }
 }
