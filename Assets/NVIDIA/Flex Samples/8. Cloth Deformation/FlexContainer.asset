@@ -11,12 +11,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f2b44126ff4eb34e941cfec7bfae3a0, type: 3}
   m_Name: FlexContainer
   m_EditorClassIdentifier: 
-  m_simpleMode: 0
+  m_simpleMode: 1
   m_simpleMaxParticles: 10000
   m_simpleSubstepCount: 2
   m_simpleIterationCount: 5
-  m_simpleGravity: {x: 0, y: -9.81, z: 0}
-  m_simpleParticleSize: 0.065
+  m_simpleGravity: {x: 0, y: 0, z: 0}
+  m_simpleParticleSize: 0.013
   m_simpleParticleFriction: 0.1
   m_simpleParticleRestitution: 0
   m_simpleParticleAdhesion: 0
@@ -38,10 +38,10 @@ MonoBehaviour:
   m_recreateSolver: 0
   m_substepCount: 2
   m_iterationCount: 5
-  m_gravity: {x: 0, y: -9.81, z: 0}
-  m_radius: 0.0975
-  m_solidRest: 0.065
-  m_fluidRest: 0.06175
+  m_gravity: {x: 0, y: 0, z: 0}
+  m_radius: 0.0195
+  m_solidRest: 0.013
+  m_fluidRest: 0.01235
   m_staticFriction: 0.1
   m_dynamicFriction: 0.1
   m_particleFriction: 0.1
@@ -75,7 +75,7 @@ MonoBehaviour:
   m_diffuseLifetime: 0
   m_plasticThreshold: 0
   m_plasticCreep: 0
-  m_collisionDistance: 0.0325
+  m_collisionDistance: 0.0065
   m_particleCollisionMargin: 0
   m_shapeCollisionMargin: 0
   m_planes: []
