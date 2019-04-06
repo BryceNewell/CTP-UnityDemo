@@ -9,7 +9,16 @@ public class AnvilHitDetection : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        //measuredSpeed = other.GetComponent<ReadoutPhysics>().currentSpeed;
-        //measuredForce = other.GetComponent<ReadoutPhysics>().currentForce;
+        if(other.gameObject.tag == "Ingot")
+        {
+            other.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "Ingot")
+        {
+            other.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+        }
     }
 }

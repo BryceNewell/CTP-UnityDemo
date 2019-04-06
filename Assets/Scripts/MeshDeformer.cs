@@ -19,6 +19,8 @@ public class MeshDeformer : MonoBehaviour
     private MeshCollider collider;
     private bool updateMeshCollider;
 
+    public MetalType metalType = MetalType.Iron;
+
     void Start()
     {
         deformingMesh = GetComponent<MeshFilter>().mesh;
@@ -86,7 +88,7 @@ public class MeshDeformer : MonoBehaviour
     {
         Vector3 pointToVertex = displacedVertices[i] - point;
         //strength curve from point of contact (look up curve with a graph calc)
-        float attenuatedForce = ((force * forceMultiplier) / (1f + (pointToVertex.sqrMagnitude *10)));
+        float attenuatedForce = ((force * forceMultiplier) / (1f + (pointToVertex.sqrMagnitude * 10)));
         float velocity = attenuatedForce * Time.deltaTime;
         vertexVelocities[i] += pointToVertex.normalized * velocity;
     }

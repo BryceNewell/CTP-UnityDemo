@@ -68,7 +68,8 @@ public class OvrAvatarSDKManager : MonoBehaviour
     }
 
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+    {
         IntPtr message = CAPI.ovrAvatarMessage_Pop();
         if (message == IntPtr.Zero)
         {
