@@ -37,7 +37,7 @@ public class MeshDeformerHammer : MonoBehaviour
             Debug.Log("Location of hit: " + hit.transform.position);
             Vector3 point = hit.point;
             point += hit.normal * forceOffset;
-            deformer.AddDeformingForce(point, 1000/*force*/);
+            deformer.AddDeformingForce(point, force);
         }
     }
 }
