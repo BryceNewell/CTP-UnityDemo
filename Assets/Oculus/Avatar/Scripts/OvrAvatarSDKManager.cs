@@ -68,8 +68,7 @@ public class OvrAvatarSDKManager : MonoBehaviour
     }
 
 	// Update is called once per frame
-	void Update ()
-    {
+	void Update () {
         IntPtr message = CAPI.ovrAvatarMessage_Pop();
         if (message == IntPtr.Zero)
         {
@@ -173,7 +172,9 @@ public class OvrAvatarSDKManager : MonoBehaviour
         specificationCallback callback, 
         bool useCombinedMesh, 
         ovrAvatarAssetLevelOfDetail lod,
-        bool forceMobileTextureFormat)
+        bool forceMobileTextureFormat,
+        ovrAvatarLookAndFeelVersion lookVersion,
+        ovrAvatarLookAndFeelVersion fallbackVersion)
     {
         CAPI.ovrAvatar_SetForceASTCTextures(forceMobileTextureFormat);
 
@@ -184,8 +185,8 @@ public class OvrAvatarSDKManager : MonoBehaviour
             specificationCallbacks.Add(userId, callbackSet);
 
             IntPtr specRequest = CAPI.ovrAvatarSpecificationRequest_Create(userId);
-            CAPI.ovrAvatarSpecificationRequest_SetLookAndFeelVersion(specRequest, ovrAvatarLookAndFeelVersion.Two);
-            CAPI.ovrAvatarSpecificationRequest_SetFallbackLookAndFeelVersion(specRequest, ovrAvatarLookAndFeelVersion.One);
+            CAPI.ovrAvatarSpecificationRequest_SetLookAndFeelVersion(specRequest, lookVersion);
+            CAPI.ovrAvatarSpecificationRequest_SetFallbackLookAndFeelVersion(specRequest, fallbackVersion);
             CAPI.ovrAvatarSpecificationRequest_SetLevelOfDetail(specRequest, lod);
             CAPI.ovrAvatarSpecificationRequest_SetCombineMeshes(specRequest, useCombinedMesh);
             CAPI.ovrAvatar_RequestAvatarSpecificationFromSpecRequest(specRequest);

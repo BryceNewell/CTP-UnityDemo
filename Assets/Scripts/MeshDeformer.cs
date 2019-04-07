@@ -9,14 +9,15 @@ public class MeshDeformer : MonoBehaviour
     public ElasticProperties elastic;
     public float springForce = 20f;
     public float damping = 5f;
-    public float forceMultiplier = 100;
+    public float forceMultiplier = 1000000;
 
     private Mesh deformingMesh;
     private Vector3[] originalVertices;
     private Vector3[] displacedVertices;
     private Vector3[] vertexVelocities;
     private float uniformScale = 1f;
-    private MeshCollider collider;
+
+    private new MeshCollider collider;
     private bool updateMeshCollider;
 
     public MetalType metalType = MetalType.Iron;
@@ -89,6 +90,7 @@ public class MeshDeformer : MonoBehaviour
         Vector3 pointToVertex = displacedVertices[i] - point;
         //strength curve from point of contact (look up curve with a graph calc)
         float attenuatedForce = ((force * forceMultiplier) / (1f + (pointToVertex.sqrMagnitude * 10)));
+        Debug.Log("attenuatedForce: " + attenuatedForce);
         float velocity = attenuatedForce * Time.deltaTime;
         vertexVelocities[i] += pointToVertex.normalized * velocity;
     }

@@ -23,7 +23,7 @@ public class Ingot : MonoBehaviour
 
         CreateVertices();
         CreateFaces();
-        AddBoxCollider();
+        AddBoxCollider(sizeX, sizeY, sizeZ);
     }
 
     private void CreateVertices()
@@ -229,8 +229,8 @@ public class Ingot : MonoBehaviour
 
     private void AddBoxCollider(float x, float y, float z)
     {
-        BoxCollider c = gameObject.AddComponent<BoxCollider>();
-        c.size = new Vector3(x, y, z);
+        //BoxCollider c = gameObject.AddComponent<BoxCollider>();
+        //c.size = new Vector3(x, y, z);
     }
 
     private static int

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4498225, g: 0.49708593, b: 0.5605531, a: 1}
+  m_IndirectSpecularColor: {r: 0.4498225, g: 0.497086, b: 0.5605531, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1440,15 +1440,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5af3b29d7db32904889ab3c1dcb99c7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_container: {fileID: 11400000, guid: 470a7573861952145a702fe7107917e6, type: 2}
+  m_container: {fileID: 0}
   m_particleGroup: -1
   m_selfCollide: 1
   m_selfCollideFilter: 0
   m_fluid: 0
   m_massScale: 1
-  m_drawParticles: 1
+  m_drawParticles: 0
   m_recreateActor: 0
-  m_asset: {fileID: 11400000, guid: ab1509697147a1a4699ab87af8c48144, type: 2}
+  m_asset: {fileID: 0}
 --- !u!4 &444580674
 Transform:
   m_ObjectHideFlags: 0
@@ -2021,9 +2021,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab3351b7a99b82a41937fa8851022a00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHammerSpeed: {fileID: 1053835484}
-  lastHitSpeed: {fileID: 1396980145}
-  lastHitForce: {fileID: 946785505}
+  currentHammerSpeed: {fileID: 0}
+  lastHitSpeed: {fileID: 0}
+  lastHitForce: {fileID: 0}
   hammer: {fileID: 0}
   anvil: {fileID: 0}
 --- !u!1001 &714806600
@@ -2358,12 +2358,13 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 54525853847209654, guid: ee26d8243db0f4f4683339fca2c73879,
+    - target: {fileID: 114291120137952380, guid: ee26d8243db0f4f4683339fca2c73879,
         type: 2}
-      propertyPath: m_UseGravity
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 54525853847209654, guid: ee26d8243db0f4f4683339fca2c73879, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: ee26d8243db0f4f4683339fca2c73879, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &800378048
@@ -2487,6 +2488,11 @@ Prefab:
     - target: {fileID: 1052373318876060, guid: d505a897114d9c34ea4832d31e892acf, type: 2}
       propertyPath: m_TagString
       value: Ore
+      objectReference: {fileID: 0}
+    - target: {fileID: 54777082512049544, guid: d505a897114d9c34ea4832d31e892acf,
+        type: 2}
+      propertyPath: m_IsKinematic
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d505a897114d9c34ea4832d31e892acf, type: 2}
@@ -3042,6 +3048,11 @@ Prefab:
     - target: {fileID: 4391470924660592, guid: 5333bcf2f304cbc40beba2f12802115c, type: 2}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 54639265279754922, guid: 5333bcf2f304cbc40beba2f12802115c,
+        type: 2}
+      propertyPath: m_IsKinematic
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5333bcf2f304cbc40beba2f12802115c, type: 2}
@@ -3845,7 +3856,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400006, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 4.089
+      value: 3.9
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 2}
       propertyPath: m_LocalPosition.y
@@ -3861,7 +3872,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 2}
       propertyPath: m_LocalRotation.y
-      value: -0.7071068
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 2}
       propertyPath: m_LocalRotation.z
@@ -3877,7 +3888,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -90
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 100008, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 2}
       propertyPath: m_TagString
@@ -5429,6 +5440,16 @@ Prefab:
       propertyPath: spawnLocation.z
       value: 0.868
       objectReference: {fileID: 0}
+    - target: {fileID: 1945295656311902, guid: 666c65939425bfb49b3dbc3e8e0c2684, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114508217054941472, guid: 666c65939425bfb49b3dbc3e8e0c2684,
+        type: 2}
+      propertyPath: ingotToSpawn
+      value: 
+      objectReference: {fileID: 1944544860691474, guid: ee26d8243db0f4f4683339fca2c73879,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 666c65939425bfb49b3dbc3e8e0c2684, type: 2}
   m_IsPrefabAsset: 0
@@ -6333,7 +6354,7 @@ Prefab:
     - target: {fileID: 54639265279754922, guid: 5333bcf2f304cbc40beba2f12802115c,
         type: 2}
       propertyPath: m_UseGravity
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4391470924660592, guid: 5333bcf2f304cbc40beba2f12802115c, type: 2}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -6401,6 +6422,11 @@ Prefab:
       propertyPath: m_Name
       value: Ball Peen Hamer 1
       objectReference: {fileID: 0}
+    - target: {fileID: 54639265279754922, guid: 5333bcf2f304cbc40beba2f12802115c,
+        type: 2}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5333bcf2f304cbc40beba2f12802115c, type: 2}
   m_IsPrefabAsset: 0
@@ -6431,15 +6457,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 669b96cc137041246b46e8203ba6a039, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_container: {fileID: 11400000, guid: f5f100a110809ae42809cdbaa404ab26, type: 2}
+  m_container: {fileID: 0}
   m_particleGroup: -1
   m_selfCollide: 1
   m_selfCollideFilter: 0
   m_fluid: 0
   m_massScale: 1
-  m_drawParticles: 1
+  m_drawParticles: 0
   m_recreateActor: 0
-  m_asset: {fileID: 11400000, guid: 1ebef3adf881d674dba0fb2c44443d3f, type: 2}
+  m_asset: {fileID: 0}
 --- !u!4 &1876117352
 Transform:
   m_ObjectHideFlags: 0
@@ -7288,15 +7314,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 793e0ae62b98fe542a8bc346e24e3dab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_container: {fileID: 11400000, guid: c5239bac2249c104a87726b2dd34792e, type: 2}
+  m_container: {fileID: 0}
   m_particleGroup: -1
-  m_selfCollide: 0
+  m_selfCollide: 1
   m_selfCollideFilter: 0
   m_fluid: 0
   m_massScale: 1
-  m_drawParticles: 1
+  m_drawParticles: 0
   m_recreateActor: 0
-  m_asset: {fileID: 11400000, guid: 81612dc1be6b8684ebceec14630ba359, type: 2}
+  m_asset: {fileID: 0}
 --- !u!4 &2141969383
 Transform:
   m_ObjectHideFlags: 0
