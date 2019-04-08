@@ -10,7 +10,7 @@ public class MeshDeformerHammer : MonoBehaviour
     public float distanceFromIngot;
     public float deformDistance = 0.3f;
     private float hitTimer = 0.0f;
-    public float timeBetweenHits = 0.1f;
+    public float timeBetweenHits = 0.5f;
 
     private void Update()
     {
@@ -21,7 +21,7 @@ public class MeshDeformerHammer : MonoBehaviour
         if (Physics.Raycast(transform.position, fwd, out hit))
         {
 
-            if (hit.distance < deformDistance && hitTimer > timeBetweenHits)
+            if (hit.distance < deformDistance/* && hitTimer > timeBetweenHits*/)
             {
                 HandleInput(hit.transform.gameObject, hit);
             }
@@ -38,6 +38,7 @@ public class MeshDeformerHammer : MonoBehaviour
         {
             //Debug.Log("Distance from hit: " + hit.distance);
             //Debug.Log("Location of hit: " + hit.transform.position);
+            Debug.Log(force);
             Vector3 point = hit.point;
             point += hit.normal * forceOffset;
             deformer.AddDeformingForce(point, force);

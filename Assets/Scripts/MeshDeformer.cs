@@ -9,7 +9,7 @@ public class MeshDeformer : MonoBehaviour
     public ElasticProperties elastic;
     public float springForce = 20f;
     public float damping = 5f;
-    public float forceMultiplier = 1000000;
+    public float forceMultiplier = 100000000;
 
     private Mesh deformingMesh;
     private Vector3[] originalVertices;
@@ -77,6 +77,8 @@ public class MeshDeformer : MonoBehaviour
 
     public void AddDeformingForce (Vector3 point, float force)
     {
+        //force = force * forceMultiplier;
+        Debug.Log(force);
         point = transform.InverseTransformPoint(point);
         for (int i = 0; i < displacedVertices.Length; i++)
         {
@@ -87,10 +89,10 @@ public class MeshDeformer : MonoBehaviour
 
     void AddForceToVertex(int i, Vector3 point, float force)
     {
+
         Vector3 pointToVertex = displacedVertices[i] - point;
         //strength curve from point of contact (look up curve with a graph calc)
         float attenuatedForce = ((force * forceMultiplier) / (1f + (pointToVertex.sqrMagnitude * 10)));
-        Debug.Log("attenuatedForce: " + attenuatedForce);
         float velocity = attenuatedForce * Time.deltaTime;
         vertexVelocities[i] += pointToVertex.normalized * velocity;
     }

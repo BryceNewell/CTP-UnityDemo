@@ -23,6 +23,6 @@ public class ReadoutPhysics : MonoBehaviour
 	void Update ()
     {
         currentSpeed = rb.velocity.magnitude;
-        currentForce = mass * currentSpeed * 100;
+        currentForce = mass * currentSpeed;
 	}
 }

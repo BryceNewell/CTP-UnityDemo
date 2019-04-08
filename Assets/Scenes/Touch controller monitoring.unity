@@ -2363,8 +2363,14 @@ Prefab:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114071485518402776, guid: ee26d8243db0f4f4683339fca2c73879,
+        type: 2}
+      propertyPath: forceMultiplier
+      value: 1000000
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 54525853847209654, guid: ee26d8243db0f4f4683339fca2c73879, type: 2}
+    - {fileID: 114291120137952380, guid: ee26d8243db0f4f4683339fca2c73879, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: ee26d8243db0f4f4683339fca2c73879, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &800378048
@@ -6524,7 +6530,7 @@ MeshFilter:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1876117350}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 0}
 --- !u!114 &1876117355
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -20,10 +20,6 @@ public class assignMeshgen : MonoBehaviour
     public  void assignMesh (Mesh generatedMesh)
     {
         meshFilter.mesh = generatedMesh;
-        
-	}
-    public void Update()
-    {
         if (_baseVertices == null)
         {
             _baseVertices = meshFilter.mesh.vertices;
@@ -47,6 +43,10 @@ public class assignMeshgen : MonoBehaviour
             meshFilter.mesh.RecalculateNormals();
         }
         meshFilter.mesh.RecalculateBounds();
+    }
+    public void Update()
+    {
+
 
     }
 
