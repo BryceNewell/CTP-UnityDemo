@@ -24,6 +24,7 @@ public class Ingot : MonoBehaviour
         CreateVertices();
         CreateFaces();
         AddBoxCollider(sizeX, sizeY, sizeZ);
+        GameObject.Find("FlexCloth").GetComponent<assignMeshgen>().assignMesh(mesh);
     }
 
     private void CreateVertices()

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4498225, g: 0.497086, b: 0.5605531, a: 1}
+  m_IndirectSpecularColor: {r: 0.4498225, g: 0.49708593, b: 0.5605531, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6439,6 +6439,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1876117352}
   - component: {fileID: 1876117351}
+  - component: {fileID: 1876117355}
+  - component: {fileID: 1876117354}
+  - component: {fileID: 1876117353}
+  - component: {fileID: 1876117356}
   m_Layer: 0
   m_Name: FlexCloth
   m_TagString: Untagged
@@ -6457,15 +6461,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 669b96cc137041246b46e8203ba6a039, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_container: {fileID: 0}
+  m_container: {fileID: 11400000, guid: f5f100a110809ae42809cdbaa404ab26, type: 2}
   m_particleGroup: -1
   m_selfCollide: 1
   m_selfCollideFilter: 0
   m_fluid: 0
   m_massScale: 1
-  m_drawParticles: 0
+  m_drawParticles: 1
   m_recreateActor: 0
-  m_asset: {fileID: 0}
+  m_asset: {fileID: 11400000, guid: 1ebef3adf881d674dba0fb2c44443d3f, type: 2}
 --- !u!4 &1876117352
 Transform:
   m_ObjectHideFlags: 0
@@ -6473,12 +6477,84 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1876117350}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 4.16, y: 1.033, z: 2.823}
+  m_LocalPosition: {x: 4.16, y: 1.085, z: 2.808}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!23 &1876117353
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1876117350}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
+  m_Materials:
+  - {fileID: 2100000, guid: 37ffc4159ea35dc42a63ca5ecb27d70d, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &1876117354
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1876117350}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1876117355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1876117350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0363b8f118779c4cb800e4f1dc0b9d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_deformationTarget: {fileID: 1876117350}
+  m_particles: 
+  m_vertices: 
+  m_proximityTreshold: 0.00001
+--- !u!114 &1876117356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1876117350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 776afed0896b22346af313fc78c22bba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ScaleX: 0.2
+  ScaleY: 0.2
+  ScaleZ: 0.4
+  RecalculateNormals: 1
 --- !u!1 &1904735432
 GameObject:
   m_ObjectHideFlags: 0
