@@ -24,6 +24,10 @@ public class Ingot : MonoBehaviour
         CreateVertices();
         CreateFaces();
         AddBoxCollider(sizeX, sizeY, sizeZ);
+
+    }
+    private void Update()
+    {
         if (GameObject.Find("FlexCloth"))
         {
             GameObject.Find("FlexCloth").GetComponent<assignMeshgen>().assignMesh(mesh);
@@ -233,8 +237,8 @@ public class Ingot : MonoBehaviour
 
     private void AddBoxCollider(float x, float y, float z)
     {
-        //BoxCollider c = gameObject.AddComponent<BoxCollider>();
-        //c.size = new Vector3(x, y, z);
+        BoxCollider c = gameObject.AddComponent<BoxCollider>();
+        c.size = new Vector3(x, y, z);
     }
 
     private static int

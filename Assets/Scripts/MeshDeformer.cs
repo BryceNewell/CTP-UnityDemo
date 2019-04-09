@@ -2,14 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum ElasticProperties
+{
+    Yes,
+    No
+};
+
 [RequireComponent(typeof(MeshFilter))]
 public class MeshDeformer : MonoBehaviour
 {
-    public enum ElasticProperties { Yes, No };
     public ElasticProperties elastic;
     public float springForce = 20f;
     public float damping = 5f;
-    public float forceMultiplier = 100000000;
+    public float forceMultiplier = 500;
+    public float areaOfEffect = 5;
 
     private Mesh deformingMesh;
     private Vector3[] originalVertices;
@@ -78,7 +84,6 @@ public class MeshDeformer : MonoBehaviour
     public void AddDeformingForce (Vector3 point, float force)
     {
         //force = force * forceMultiplier;
-        Debug.Log(force);
         point = transform.InverseTransformPoint(point);
         for (int i = 0; i < displacedVertices.Length; i++)
         {
@@ -92,8 +97,17 @@ public class MeshDeformer : MonoBehaviour
 
         Vector3 pointToVertex = displacedVertices[i] - point;
         //strength curve from point of contact (look up curve with a graph calc)
-        float attenuatedForce = ((force * forceMultiplier) / (1f + (pointToVertex.sqrMagnitude * 10)));
+        float attenuatedForce = ((force * forceMultiplier) / (1f + (pointToVertex.sqrMagnitude * areaOfEffect)));
         float velocity = attenuatedForce * Time.deltaTime;
         vertexVelocities[i] += pointToVertex.normalized * velocity;
+    }
+
+    public void SetForceMultiplier(float force)
+    {
+        forceMultiplier = force;
+    }
+    public void SetAreaOfEffect(float aoe)
+    {
+        areaOfEffect = aoe;
     }
 }
