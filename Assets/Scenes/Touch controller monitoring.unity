@@ -113,6 +113,55 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &39360384
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 39360386}
+  - component: {fileID: 39360385}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &39360385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 39360384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 669b96cc137041246b46e8203ba6a039, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_container: {fileID: 11400000, guid: f5f100a110809ae42809cdbaa404ab26, type: 2}
+  m_particleGroup: -1
+  m_selfCollide: 0
+  m_selfCollideFilter: 0
+  m_fluid: 0
+  m_massScale: 1
+  m_drawParticles: 1
+  m_recreateActor: 0
+  m_asset: {fileID: 11400000, guid: 1ebef3adf881d674dba0fb2c44443d3f, type: 2}
+--- !u!4 &39360386
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 39360384}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 4.106, y: 1.031, z: 2.816}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 20
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &67400551
 GameObject:
   m_ObjectHideFlags: 0
@@ -1787,7 +1836,7 @@ AudioSource:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 609136950}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 85a1d8b2b909a2a4c8510a6bf1edef5b, type: 3}
@@ -1889,8 +1938,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deformationType: 0
   elastic: 1
-  materialSoftness: 5000
-  deformationArea: 10
+  materialSoftness: 30000
+  deformationArea: 20
 --- !u!1 &654642724
 GameObject:
   m_ObjectHideFlags: 0
@@ -2490,7 +2539,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4831033374052198, guid: ee26d8243db0f4f4683339fca2c73879, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0.95
+      value: 0.778
       objectReference: {fileID: 0}
     - target: {fileID: 4831033374052198, guid: ee26d8243db0f4f4683339fca2c73879, type: 2}
       propertyPath: m_LocalRotation.x
@@ -2512,21 +2561,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114291120137952380, guid: ee26d8243db0f4f4683339fca2c73879,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114071485518402776, guid: ee26d8243db0f4f4683339fca2c73879,
-        type: 2}
-      propertyPath: forceMultiplier
-      value: 5000
-      objectReference: {fileID: 0}
-    - target: {fileID: 33781754325049186, guid: ee26d8243db0f4f4683339fca2c73879,
-        type: 2}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
     - target: {fileID: 64837894334459730, guid: ee26d8243db0f4f4683339fca2c73879,
         type: 2}
       propertyPath: m_Convex
@@ -2535,26 +2569,24 @@ Prefab:
     - target: {fileID: 114276621415020940, guid: ee26d8243db0f4f4683339fca2c73879,
         type: 2}
       propertyPath: sizeX
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 114276621415020940, guid: ee26d8243db0f4f4683339fca2c73879,
         type: 2}
       propertyPath: sizeY
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 114276621415020940, guid: ee26d8243db0f4f4683339fca2c73879,
         type: 2}
       propertyPath: sizeZ
-      value: 20
+      value: 40
       objectReference: {fileID: 0}
-    - target: {fileID: 114071485518402776, guid: ee26d8243db0f4f4683339fca2c73879,
+    - target: {fileID: 114276621415020940, guid: ee26d8243db0f4f4683339fca2c73879,
         type: 2}
-      propertyPath: areaOfEffect
-      value: 10
+      propertyPath: roundnessValue
+      value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 54525853847209654, guid: ee26d8243db0f4f4683339fca2c73879, type: 2}
-    - {fileID: 114291120137952380, guid: ee26d8243db0f4f4683339fca2c73879, type: 2}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee26d8243db0f4f4683339fca2c73879, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &800378048
@@ -4091,6 +4123,10 @@ Prefab:
     - target: {fileID: 100008, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 2}
       propertyPath: m_Name
       value: VR Player Controller
+      objectReference: {fileID: 0}
+    - target: {fileID: 2015248, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 2}
+      propertyPath: m_Depth
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 2}

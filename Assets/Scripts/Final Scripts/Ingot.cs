@@ -23,7 +23,7 @@ public class Ingot : MonoBehaviour
 
         CreateVertices();
         CreateFaces();
-        AddBoxCollider(sizeX, sizeY, sizeZ);
+        //AddBoxCollider(sizeX, sizeY, sizeZ);
 
     }
     private void Update()

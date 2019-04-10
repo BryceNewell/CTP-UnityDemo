@@ -14,7 +14,7 @@ public class MeshDeformerHammer : MonoBehaviour
     private GameObject hitObject;
     private float forceOffset = 0.1f;
     private float distanceFromIngot;
-    private float deformDistance = 0.3f;
+    private float deformDistance = 0.01f;
     private float hitTimer = 0.0f;
     public float timeBetweenHits = 0.5f;
     public List<AudioClip> hitSounds = new List<AudioClip>();
@@ -78,6 +78,7 @@ public class MeshDeformerHammer : MonoBehaviour
 
         if (deformer)
         {
+            force = force * deformer.forceMultiplier/500;
             Debug.Log(force);
             Vector3 point = hit.point;
             point += hit.normal * forceOffset;
